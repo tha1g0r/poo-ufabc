@@ -13,9 +13,9 @@ public class TestesDiscosVoadores {
     }
 
     public static void imprimirMatriz(int[][] matriz) {
-        int n_linhas = matriz.length;
+        int nLinhas = matriz.length;
 
-        for (int i = 0; i < n_linhas; i++) {
+        for (int i = 0; i < nLinhas; i++) {
             imprimirVetor(matriz[i]);
         }
     }
@@ -33,12 +33,12 @@ public class TestesDiscosVoadores {
     }
 
     public static void ordenarLinhas(int[][] matriz) {
-        int n_linhas = matriz.length;
+        int nLinhas = matriz.length;
 
-        for (int i = 0; i < n_linhas - 1; i++) {
+        for (int i = 0; i < nLinhas - 1; i++) {
             int idxMenor = i;
 
-            for (int j = i + 1; j < n_linhas; j++) {
+            for (int j = i + 1; j < nLinhas; j++) {
                 if (compararVetores(matriz[j], matriz[idxMenor]) > 0) {
                     idxMenor = j;
                 }
@@ -50,6 +50,21 @@ public class TestesDiscosVoadores {
                 matriz[idxMenor] = temp;
             }
         }
+    }
+
+    public static int[][] transposicao(int[][] matriz) {
+        int nLinhas = matriz.length;
+        int nColunas = matriz[0].length;
+
+        int[][] matrizT = new int[nColunas][nLinhas];
+
+        for (int i = 0; i < nLinhas; i++) {
+            for (int j = 0; j < nColunas; j++) {
+                matrizT[j][i] = matriz[i][j];
+            }
+        }
+
+        return matrizT;
     }
 
     public static void main(String[] args) {
@@ -69,10 +84,18 @@ public class TestesDiscosVoadores {
         System.out.println("Matriz original:");
         imprimirMatriz(matriz);
 
-        // ordenar por linhas;
+        // ordenar por linhas
         ordenarLinhas(matriz);
         System.out.println();
         System.out.println("Matriz ordenada por linhas:");
+        imprimirMatriz(matriz);
+
+        // ordenar por colunas
+        int[][] matrizT = transposicao(matriz);
+        ordenarLinhas(matrizT);
+        matriz = transposicao(matrizT);
+        System.out.println();
+        System.out.println("Matriz ordenada por colunas:");
         imprimirMatriz(matriz);
 
         leitor.close();
