@@ -20,6 +20,38 @@ public class TestesDiscosVoadores {
         }
     }
 
+    public static int compararVetores(int[] v1, int[] v2) {
+        for (int i = 0; i < v1.length; i++) {
+            if (v1[i] < v2[i]) {
+                return 1;
+            } else if (v1[i] > v2[i]) {
+                return -1;
+            }
+        }
+
+        return 0;
+    }
+
+    public static void ordenarLinhas(int[][] matriz) {
+        int n_linhas = matriz.length;
+
+        for (int i = 0; i < n_linhas - 1; i++) {
+            int idxMenor = i;
+
+            for (int j = i + 1; j < n_linhas; j++) {
+                if (compararVetores(matriz[j], matriz[idxMenor]) > 0) {
+                    idxMenor = j;
+                }
+            }
+
+            if (idxMenor != i) {
+                int[] temp = matriz[i];
+                matriz[i] = matriz[idxMenor];
+                matriz[idxMenor] = temp;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
 
@@ -32,13 +64,16 @@ public class TestesDiscosVoadores {
                 matriz[i][j] = leitor.nextInt();
             }
         }
-
+        
         System.out.println();
-        System.out.println("Matriz Original:");
+        System.out.println("Matriz original:");
         imprimirMatriz(matriz);
 
         // ordenar por linhas;
-        //ordenarLinhas(matriz, 0);
+        ordenarLinhas(matriz);
+        System.out.println();
+        System.out.println("Matriz ordenada por linhas:");
+        imprimirMatriz(matriz);
 
         leitor.close();
     }
