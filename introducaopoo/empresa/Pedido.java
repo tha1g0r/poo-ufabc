@@ -9,6 +9,7 @@ public class Pedido {
     private static int[] removerDuplicatas(int[] v) {
         int nFinal = v.length;
         for (int i = 0; i < v.length - 1; i++) {
+            if (v[i] == -1) continue;
             for (int j = i + 1; j < v.length; j++) {
                 if (v[j] == v[i]) {
                     v[j] = -1;
@@ -31,9 +32,12 @@ public class Pedido {
     private static int[] somaTotalVetores(int[] v1, int n1, int[] v2, int n2) {
         int[] vetorTotal = new int[n1 + n2];
 
-        for (int i = 0; i < n1; i++) {
+        int i;
+        for (i = 0; i < n1; i++) {
             vetorTotal[i] = v1[i];
-            vetorTotal[i + n1] = v2[i];
+        }
+        for (i = n1; i < vetorTotal.length; i++) {
+            vetorTotal[i] = v2[i - n1];
         }
 
         return vetorTotal;
