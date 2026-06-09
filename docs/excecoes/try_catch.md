@@ -1,4 +1,4 @@
-# try-catch
+# Captura de Exceções (`try-catch`)
 
 ```java
 try {
