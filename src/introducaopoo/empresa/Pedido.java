@@ -1,4 +1,4 @@
-package introducaopoo.empresa;
+package src.introducaopoo.empresa;
 
 public class Pedido {
     private boolean entregue = false;

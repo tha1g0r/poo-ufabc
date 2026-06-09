@@ -1,4 +1,4 @@
-package introducaopoo;
+package src.introducaopoo;
 
 public class OperacoesStrings {
     private String texto;

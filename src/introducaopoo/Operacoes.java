@@ -1,4 +1,4 @@
-package introducaopoo;
+package src.introducaopoo;
 
 public class Operacoes {
     private int valorA;

@@ -1,4 +1,4 @@
-package introducaopoo.dispositivos;
+package src.introducaopoo.dispositivos;
 
 public class LampadaInteligente {
     private boolean ligada = false;
