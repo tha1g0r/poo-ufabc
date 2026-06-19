@@ -23,7 +23,7 @@ public class OperacoesStrings {
                 palavra = "";
             }
         }
-        listaPalavras[palavrasAdicionadas++] = palavra;
+        if (!palavra.equals("")) listaPalavras[palavrasAdicionadas++] = palavra;
 
         this.listaPalavras = listaPalavras;
     }
@@ -39,14 +39,20 @@ public class OperacoesStrings {
 
     int contaPalavras() {
         int contador = 0;
-        if (this.texto.charAt(0) != ' ') {
-            contador++;
+        boolean emPalavra = false;
+
+        for (int i = 0; i < this.texto.length(); i++) {
+            char c = this.texto.charAt(i);
+            if (c != ' ' && c != '.') {
+                if (!emPalavra) {
+                    contador++;
+                    emPalavra = true;
+                }
+            } else {
+                emPalavra = false;
+            }
         }
 
-        for (int i = 1; i < texto.length(); i++) {
-            if ((this.texto.charAt(i) == ' ') && (this.texto.charAt(i + 1) != ' ')) contador++;
-        }
-        
         return contador;
     }
 
