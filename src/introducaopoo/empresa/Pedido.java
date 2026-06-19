@@ -75,12 +75,15 @@ public class Pedido {
 
     public boolean somarPedido(Pedido p) {
         int[] vetorTotal = somaTotalVetores(this.listaCodigos, this.numeroCodigos, p.listaCodigos, p.numeroCodigos);
-
         int[] vetorSemDuplicatas = removerDuplicatas(vetorTotal);
 
         if (vetorSemDuplicatas.length > 5) return false;
 
-        this.listaCodigos = vetorSemDuplicatas;
+        this.listaCodigos = new int[5];
+        for (int i = 0; i < vetorSemDuplicatas.length; i++) {
+            this.listaCodigos[i] = vetorSemDuplicatas[i];
+        }
+        this.numeroCodigos = vetorSemDuplicatas.length;
         return true;
     }
 }
