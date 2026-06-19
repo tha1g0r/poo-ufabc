@@ -1,4 +1,4 @@
-package src.construtores;
+package construtores;
 
 public class ContaCorrente {
     private String nomeTitular;

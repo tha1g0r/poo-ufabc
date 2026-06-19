@@ -1,4 +1,4 @@
-package src.construtores.matematica;
+package construtores.matematica;
 
 public class Fracao {
     private int numerador;

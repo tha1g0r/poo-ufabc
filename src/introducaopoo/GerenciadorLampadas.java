@@ -1,6 +1,6 @@
-package src.introducaopoo;
+package introducaopoo;
 
-import src.introducaopoo.dispositivos.LampadaInteligente;
+import introducaopoo.dispositivos.LampadaInteligente;
 
 public class GerenciadorLampadas {
     private LampadaInteligente[] listaLampadas = new LampadaInteligente[10];

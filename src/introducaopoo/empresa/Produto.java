@@ -1,4 +1,4 @@
-package src.introducaopoo.empresa;
+package introducaopoo.empresa;
 
 public class Produto {
     //private int codigo;

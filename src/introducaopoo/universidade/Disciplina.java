@@ -1,4 +1,4 @@
-package src.introducaopoo.universidade;
+package introducaopoo.universidade;
 
 public class Disciplina {
     private String titulo;

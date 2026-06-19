@@ -1,4 +1,4 @@
-package src.introducaopoo;
+package introducaopoo;
 
 public class Porta {
     private boolean aberta = true;

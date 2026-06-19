@@ -1,4 +1,4 @@
-package src.introducaojava;
+package introducaojava;
 
 import java.util.Scanner;
 
