@@ -156,8 +156,29 @@ public class Tabuleiro {
         return null;
     }
 
+    private static PalavraEncontrada[] removerNulos(PalavraEncontrada[] v, int qtdeNulos) {
+        PalavraEncontrada[] vetorSemNulos = new PalavraEncontrada[v.length - qtdeNulos];
+        int controle = 0;
+        for (int i = 0; i < v.length; i++) {
+            if (v[i] != null) {
+                vetorSemNulos[controle++] = v[i];
+            }
+        }
+
+        return vetorSemNulos;
+    }
+
     public PalavraEncontrada[] buscar(String[] palavras) {
-        return new PalavraEncontrada[0];
+        PalavraEncontrada[] vetorComNulos = new PalavraEncontrada[palavras.length];
+        int qtdeNulos = 0;
+
+        for (int i = 0; i < palavras.length; i++) {
+            vetorComNulos[i] = this.buscar(palavras[i]);
+
+            if (vetorComNulos[i] == null) qtdeNulos++;
+        }
+
+        return removerNulos(vetorComNulos, qtdeNulos);
     }
 
     @Override
