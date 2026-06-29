@@ -1,4 +1,4 @@
-package interfaces.criptografia;
+package aulainterfaces.criptografia;
 
 public class ZenitPolar implements Cifra {
     @Override

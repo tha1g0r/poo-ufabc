@@ -1,4 +1,4 @@
-package interfaces.criptografia;
+package aulainterfaces.criptografia;
 
 public interface Cifra {
     String cifrar(String mensagem);
