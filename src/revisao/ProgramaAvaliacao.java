@@ -2,8 +2,6 @@
 
 package revisao;
 
-import revisao.plano.*;
-
 import revisao.plano.PlanoDeAulas;
 import revisao.plano.PlanoDeAulasExtended;
 import revisao.plano.Teorica;

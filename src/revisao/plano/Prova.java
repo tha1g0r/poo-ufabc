@@ -3,9 +3,14 @@ package revisao.plano;
 public class Prova extends Aula implements Avaliacao {
     private double peso;
 
-	public Prova(double peso, String descricao) {
+    public Prova(double peso, String descricao) {
+        this(peso, descricao, 2);
+    }
+
+	public Prova(double peso, String descricao, int cargaHoraria) {
 		super.setDescricao(descricao);
 		this.peso = peso;
+        super.setCargaHoraria(cargaHoraria);
 	}
 	
 	@Override
