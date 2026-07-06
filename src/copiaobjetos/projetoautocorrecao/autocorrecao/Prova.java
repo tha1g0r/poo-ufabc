@@ -1,4 +1,4 @@
-package autocorrecao;
+package copiaobjetos.projetoautocorrecao.autocorrecao;
 
 public class Prova {
 	private Pergunta[] perguntas;

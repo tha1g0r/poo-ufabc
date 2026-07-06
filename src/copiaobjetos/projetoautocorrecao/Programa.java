@@ -1,6 +1,8 @@
-import autocorrecao.Prova;
-import autocorrecao.Pergunta;
-import autocorrecao.Alternativa;
+package copiaobjetos.projetoautocorrecao;
+
+import copiaobjetos.projetoautocorrecao.autocorrecao.Prova;
+import copiaobjetos.projetoautocorrecao.autocorrecao.Pergunta;
+import copiaobjetos.projetoautocorrecao.autocorrecao.Alternativa;
 
 public class Programa {
 	public static void main(String[] args) {
