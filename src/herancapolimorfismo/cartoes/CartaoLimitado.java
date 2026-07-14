@@ -5,7 +5,7 @@ public class CartaoLimitado extends CartaoCredito {
 
     @Override
     public boolean pagarComCredito(double valor) {
-        if (valor > this.limite) {
+        if (this.valorFatura + valor > this.limite) {
             return false;
         }
 
