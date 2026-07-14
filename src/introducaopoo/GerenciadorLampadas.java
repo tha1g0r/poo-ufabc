@@ -27,11 +27,10 @@ public class GerenciadorLampadas {
     }
 
     public void ligarTodasLampadas() {
-        for (int i = 0; i < numeroLampadas; i++) listaLampadas[i].ligar();
-
+        for (int i = 0; i < numeroLampadas; i++) ligarLampada(i);
     }
 
     public void desligarTodasLampadas() {
-        for (int i = 0; i < numeroLampadas; i++) listaLampadas[i].desligar();
+        for (int i = 0; i < numeroLampadas; i++) desligarLampada(i);
     }
 }
