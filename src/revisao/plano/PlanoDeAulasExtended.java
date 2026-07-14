@@ -39,4 +39,14 @@ public class PlanoDeAulasExtended extends PlanoDeAulas {
     public static int compararPlanos(PlanoDeAulasExtended p1, PlanoDeAulasExtended p2) {
         return p1.comparar(p2);
     }
+
+    @Override
+    public void imprimir() {
+        for (int i = 0; i < super.qtdAulas; i++) {
+            System.out.println(String.format("- [%s] %s (%dh)",
+                                super.aulas[i].getTipo(),
+                                super.aulas[i].getDescricao(),
+                                super.aulas[i].getCargaHoraria()));
+        }
+    }
 }
