@@ -14,7 +14,7 @@ public class Navegador {
     }
 
     public AbaNavegador abrirAba(int tipo, String titulo) {
-        if (nAbasAbertas > nMaxAbas) return null;
+        if (nAbasAbertas >= nMaxAbas) return null;
 
         AbaNavegador novaAba;
         switch (tipo) {
@@ -59,7 +59,7 @@ public class Navegador {
 
         for (int i = 0; i < nAbasAbertas; i++) {
             AbaNavegador abaAtual = this.abasAbertas[i];
-            descricaoAbas[i] = String.format("%d %s", abaAtual.tipo, abaAtual.titulo);
+            descricaoAbas[i] = String.format("%s %s", abaAtual.getTipo(), abaAtual.titulo);
         }
 
         return descricaoAbas;
@@ -70,6 +70,10 @@ public class Navegador {
     }
 
     public String[] getHistorico() {
-        return new String[0];
+        String[] copia = new String[this.nRegistros];
+        for (int i = 0; i < this.nRegistros; i++) {
+            copia[i] = this.historico[i];
+        }
+        return copia;
     }
 }
