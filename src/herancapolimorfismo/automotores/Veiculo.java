@@ -8,6 +8,6 @@ public class Veiculo {
     }
 
     public String getTipo() {
-        return String.format("Vaiculo generico modelo %s", this.modelo);
+        return String.format("Veiculo generico modelo %s", this.modelo);
     }
 }
