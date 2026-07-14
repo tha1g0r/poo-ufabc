@@ -46,18 +46,17 @@ public class Tabuleiro {
         for (int linha = 0; linha < this.nLinhas; linha++) {
             for (int coluna = 0; coluna <= this.nColunas - tamanhoPalavra; coluna++) {
                 char caractereAtual = this.conteudo[linha][coluna];
-
+    
                 if (caractereAtual == primeiroCaractere || caractereAtual == ultimoCaractere) {
                     String palavraAtual = "";
-                    
                     for (int i = coluna; i < coluna + tamanhoPalavra; i++) {
                         palavraAtual += this.conteudo[linha][i];
                     }
-
+    
                     if (palavraAtual.equals(palavra)) {
-                        return new PalavraEncontrada(palavra, new int[]{linha, coluna}, "l1"); 
+                        return new PalavraEncontrada(palavra, new int[]{linha, coluna}, "l1");
                     } else if (palavraAtual.equals(palavraInversa)) {
-                        return new PalavraEncontrada(palavra, new int[]{linha, coluna}, "l2");
+                        return new PalavraEncontrada(palavra, new int[]{linha, coluna + tamanhoPalavra - 1}, "l2");
                     }
                 }
             }
@@ -70,18 +69,17 @@ public class Tabuleiro {
         for (int linha = 0; linha <= this.nLinhas - tamanhoPalavra; linha++) {
             for (int coluna = 0; coluna < this.nColunas; coluna++) {
                 char caractereAtual = this.conteudo[linha][coluna];
-
+    
                 if (caractereAtual == primeiroCaractere || caractereAtual == ultimoCaractere) {
                     String palavraAtual = "";
-                    
                     for (int i = linha; i < linha + tamanhoPalavra; i++) {
                         palavraAtual += this.conteudo[i][coluna];
                     }
-
+    
                     if (palavraAtual.equals(palavra)) {
-                        return new PalavraEncontrada(palavra, new int[]{linha, coluna}, "c1"); 
+                        return new PalavraEncontrada(palavra, new int[]{linha, coluna}, "c1");
                     } else if (palavraAtual.equals(palavraInversa)) {
-                        return new PalavraEncontrada(palavra, new int[]{linha, coluna}, "c2");
+                        return new PalavraEncontrada(palavra, new int[]{linha + tamanhoPalavra - 1, coluna}, "c2");
                     }
                 }
             }
@@ -95,44 +93,42 @@ public class Tabuleiro {
         for (int linha = 0; linha <= this.nLinhas - tamanhoPalavra; linha++) {
             for (int coluna = 0; coluna <= this.nColunas - tamanhoPalavra; coluna++) {
                 char caractereAtual = this.conteudo[linha][coluna];
-
+    
                 if (caractereAtual == primeiroCaractere || caractereAtual == ultimoCaractere) {
                     String palavraAtual = "";
-                    
                     for (int i = 0; i < tamanhoPalavra; i++) {
                         palavraAtual += this.conteudo[linha + i][coluna + i];
                     }
-
+    
                     if (palavraAtual.equals(palavra)) {
-                        return new PalavraEncontrada(palavra, new int[]{linha, coluna}, "d2"); 
+                        return new PalavraEncontrada(palavra, new int[]{linha, coluna}, "d2");
                     } else if (palavraAtual.equals(palavraInversa)) {
-                        return new PalavraEncontrada(palavra, new int[]{linha, coluna}, "d4");
+                        return new PalavraEncontrada(palavra, new int[]{linha + tamanhoPalavra - 1, coluna + tamanhoPalavra - 1}, "d4");
                     }
                 }
             }
         }
-
-        // Diagonal Secunsária (L <- R)
+    
+        // Diagonal Secundária (L <- R)
         for (int linha = 0; linha <= this.nLinhas - tamanhoPalavra; linha++) {
             for (int coluna = tamanhoPalavra - 1; coluna < this.nColunas; coluna++) {
                 char caractereAtual = this.conteudo[linha][coluna];
-
+    
                 if (caractereAtual == primeiroCaractere || caractereAtual == ultimoCaractere) {
                     String palavraAtual = "";
-                    
                     for (int i = 0; i < tamanhoPalavra; i++) {
                         palavraAtual += this.conteudo[linha + i][coluna - i];
                     }
-
+    
                     if (palavraAtual.equals(palavra)) {
-                        return new PalavraEncontrada(palavra, new int[]{linha, coluna}, "d3"); 
+                        return new PalavraEncontrada(palavra, new int[]{linha, coluna}, "d3");
                     } else if (palavraAtual.equals(palavraInversa)) {
-                        return new PalavraEncontrada(palavra, new int[]{linha, coluna}, "d1");
+                        return new PalavraEncontrada(palavra, new int[]{linha + tamanhoPalavra - 1, coluna - (tamanhoPalavra - 1)}, "d1");
                     }
                 }
             }
         }
-        
+
         return null;
     }
 
