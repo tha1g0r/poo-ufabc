@@ -1,18 +1,18 @@
 package copiaobjetos.usuarios;
 
 public class PerfilRedeSocial extends PerfilUsuario {
-    private String msg;
+    private String msg = "Sem mensagem";
 
-    PerfilRedeSocial(String nome, String login) {
+    public PerfilRedeSocial(String nome, String login) {
         super(nome, login);
     }
 
-    PerfilRedeSocial(String nome, String login, String mensagemPaginaInicial) {
+    public PerfilRedeSocial(String nome, String login, String mensagemPaginaInicial) {
         this(nome, login);
         this.msg = mensagemPaginaInicial;
     }
 
-    String getPerfil() {
+    public String getPerfil() {
         // "<nome> <mensagemPaginaInicial>"
 
         return String.format("%s %s", super.getNome(), this.msg);
