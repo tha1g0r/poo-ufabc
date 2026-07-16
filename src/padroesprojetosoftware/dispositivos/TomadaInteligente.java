@@ -1,5 +1,5 @@
 package padroesprojetosoftware.dispositivos;
 
-class TomadaInteligente {
+class TomadaInteligente extends DispositivoInteligente {
 
 }

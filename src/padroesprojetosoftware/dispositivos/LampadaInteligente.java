@@ -1,5 +1,5 @@
 package padroesprojetosoftware.dispositivos;
 
-class LampadaInteligente {
+class LampadaInteligente extends DispositivoInteligente {
 
 }

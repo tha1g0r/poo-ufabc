@@ -1,5 +1,5 @@
 package padroesprojetosoftware.dispositivos;
 
-class InterruptorInteligente {
+class InterruptorInteligente extends DispositivoInteligente {
 
 }
