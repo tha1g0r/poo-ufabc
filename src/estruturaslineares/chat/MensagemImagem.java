@@ -7,6 +7,6 @@ class MensagemImagem extends Mensagem {
 
     @Override
     public String getRepresentacao() {
-        
+        return "";
     }
 }

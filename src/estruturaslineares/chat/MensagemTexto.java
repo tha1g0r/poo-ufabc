@@ -7,6 +7,6 @@ class MensagemTexto extends Mensagem {
 
     @Override
     public String getRepresentacao() {
-        
+        return "";
     }
 }

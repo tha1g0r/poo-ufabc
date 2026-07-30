@@ -10,11 +10,11 @@ public class ListaMensagens {
     }
 
     public Mensagem[] getMensagens() {
-
+        return null;
     }
 
     public String[] getMensagensString() {
-
+        return null;
     }
 
     public void like(int indiceMensagem) {
