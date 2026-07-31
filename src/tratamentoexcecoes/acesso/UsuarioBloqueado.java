@@ -1,11 +1,19 @@
 package tratamentoexcecoes.acesso;
 
 public class UsuarioBloqueado extends Exception {
-    public UsuarioBloqueado() {
-        super("O acesso deste usuário está bloqueado.");
+    private String login;
+
+    public UsuarioBloqueado(String login) {
+        super("O acesso do usuário " + login + " está bloqueado.");
+        this.login = login;
     }
 
-    public UsuarioBloqueado(String mensagem) {
-        super(mensagem);
+    public String getLogin() {
+        return this.login;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuário bloqueado: " + this.getLogin();
     }
 }
